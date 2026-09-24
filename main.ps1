@@ -100,7 +100,8 @@ $notFound = [System.Collections.Generic.List[string]]::new()
 $ambiguous = [System.Collections.Generic.List[string]]::new()
 
 foreach ($name in $siteName) {
-    $matchedSites = @($sites | Where-Object { $_.DisplayName -eq $name -or $_.Name -eq $name })
+    $matchedSites = @($sites | Where-Object { $_.Name -eq $name })
+    # $matchedSites = @($sites | Where-Object { $_.DisplayName -eq $name -or $_.Name -eq $name })
     if ($matchedSites.Count -eq 0) {
         Write-Warning "No SharePoint site found with name '$name'"
         $notFound.Add($name)
