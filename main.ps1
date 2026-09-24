@@ -20,7 +20,7 @@ param(
 $ErrorActionPreference = 'Stop'
 
 $graphAppId = '00000003-0000-0000-c000-000000000000'
-$requiredScopes = @('Application.Read.All', 'AppRoleAssignment.ReadWrite.All', 'Sites.FullControl.All')
+$requiredScopes = @('Application.ReadWrite.All', 'AppRoleAssignment.ReadWrite.All', 'Sites.FullControl.All')
 
 $context = Get-MgContext
 if (-not $context) {
